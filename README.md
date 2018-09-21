@@ -2,6 +2,6 @@
 SublimeText 的 vJass 语法高亮，使用 YAML 制作。
 
 ## 预览图
-![image](https://github.com/yefq/WeSyntax/tree/master/_images/vJass.png)
-![image](https://github.com/yefq/WeSyntax/tree/master/_images/TriggerString.png)
-![image](https://github.com/yefq/WeSyntax/tree/master/_images/WorldEditString.png)
+![vJass](https://raw.githubusercontent.com/yefq/WeSyntax/master/_images/vJass.png)
+![TriggerString](https://raw.githubusercontent.com/yefq/WeSyntax/master/_images/TriggerString.png)
+![WorldEditString](https://raw.githubusercontent.com/yefq/WeSyntax/master/_images/WorldEditString.png)
