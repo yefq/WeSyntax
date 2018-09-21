@@ -1,0 +1,79 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - j
+scope: source.vjass
+
+contexts:
+  main:
+    - include: lua
+    - include: textmacro
+    - include: wave
+    - include: keywords
+    - include: type
+    - include: const
+    - include: scope:source.jass#main
+
+  keywords:
+    - match: >
+        (?x)\b(
+          library|endlibrary|
+          scope|endscope|
+          struct|endstruct|
+          interface|endinterface|
+          method|endmethod|
+          requires|needs|initializer|
+          private|public|static|operator|
+          #|
+        )\b
+      scope: keyword.control.vjass
+
+  type:
+    - match: >
+        (?x)\b(
+          thistype
+        )\b
+      scope: storage.type.vjass
+    - match: >
+        (?x)(?:
+          \b(key)\s+\w+
+        )
+      captures:
+        1: storage.type.vjass
+
+  const:
+    - match: >
+        (?x)\b(
+          this|
+          create|allocate|onDestroy|onInit
+        )\b
+      scope: constant.language.vjass
+
+  textmacro:
+    - match: \$\w*\$
+      scope: constant.language.vjass
+
+  wave:
+    - match: >
+        (?x)(\#)\s*?(
+          include|define|undef|
+          ifndef|ifdef|if|elseif|
+        )\s+(.*?)$
+      captures:
+        1: keyword.control.vjass
+        2: keyword.control.vjass
+        3: string.quoted.other.vjass
+    - match: \#\s*?(else|endif|enddefine)
+      scope: keyword.control.vjass
+
+  lua:
+    - match: '<\?'
+      captures:
+        0: punctuation.definition.comment.vjass
+      push:
+        - meta_scope: comment.block.vjass
+        - match: '\?>'
+          captures:
+            0: punctuation.definition.comment.vjass
+          pop: true

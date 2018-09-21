@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[if ${1:true} then
+    ${0}
+endif]]></content>
+    <tabTrigger>if</tabTrigger>
+    <scope>source.vjass</scope>
+    <description>if ... then</description>
+</snippet>

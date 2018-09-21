@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[function ${1:func_name} takes ${2:nothing} returns ${3:nothing}
+    ${0}
+endfunction]]></content>
+    <tabTrigger>function</tabTrigger>
+    <scope>source.vjass</scope>
+    <description>function</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[loop
+    ${0}
+    exitwhen ${1:true}
+endloop]]></content>
+    <tabTrigger>loop</tabTrigger>
+    <scope>source.vjass</scope>
+    <description>loop</description>
+</snippet>

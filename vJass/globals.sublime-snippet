@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[globals
+    ${0}
+endglobals]]></content>
+    <tabTrigger>globals</tabTrigger>
+    <scope>source.vjass</scope>
+    <description>globals</description>
+</snippet>

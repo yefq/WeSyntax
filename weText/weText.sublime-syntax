@@ -1,0 +1,57 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - txt
+scope: source.wetext
+contexts:
+  main:
+    - include: comments
+    - include: string
+    - include: keywords
+    - include: const
+    - include: type
+    - include: func
+
+  comments:
+  # Comments begin with a '//' and finish at the end of the line
+  - match: '//.*?$'
+    scope: comment.wetext
+
+  func:
+    - match: >
+        (?x)(
+          \w+(?=\=)|
+          ^\w+$|
+          WESTRING_\w+
+        )
+      scope: entity.name.function.wetext
+
+  const:
+    - match: >
+        (?x)(
+          null|
+          true|false|
+          \b[0-9]+\b|
+          (?<=\[)\w+(?=\])|
+          (?<=\()\w+(?=\))
+        )
+      scope: constant.numeric.wetext
+
+  type:
+    - match: ~.*?(?=,|\s*$)
+      scope: storage.type.wetext
+
+  string:
+    - match: >
+        (?x)(
+          ".*?"
+        )
+      scope: string.wetext
+
+  keywords:
+    - match: >
+        (?x)(
+          ^\[.*?\]$
+        )
+      scope: keyword.control.wetext
