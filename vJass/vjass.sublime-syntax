@@ -25,6 +25,7 @@ contexts:
           method|endmethod|
           requires|needs|initializer|
           private|public|static|operator|
+          debug
           #|
         )\b
       scope: keyword.control.vjass
@@ -46,7 +47,8 @@ contexts:
     - match: >
         (?x)\b(
           this|
-          create|allocate|onDestroy|onInit
+          create|allocate|onDestroy|onInit|
+          execute|evaluate
         )\b
       scope: constant.language.vjass
 
